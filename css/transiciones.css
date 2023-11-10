@@ -1,0 +1,53 @@
+
+.imenu{
+    width: 6rem;
+    height: 5rem;
+}
+
+
+
+.paraTraslado{
+	padding: 1rem;
+	
+	/*Para transición*/
+    transition: transform 4s;
+}
+/*Al pasar el mouse sobre el elemento, se traslada n unidades en X y Y respectivamente*/
+.paraTraslado:hover{
+    transform: translate(3.2rem,3.2rem); 
+}
+
+
+.paraRotado{
+	padding: 1rem;
+	
+	/*Para transición*/
+    transition: transform 4s;
+}
+/*Al pasar el mouse sobre el elemento, rota n grados en el sentido de las 
+manecillas del reloj (un número negativo rota en el sentido contrario)*/
+.paraRotado:hover{
+    transform: rotate(120deg); 
+}
+
+.paraCambioTam{
+	padding: 1rem;
+	
+	/*Para transición*/
+    transition: transform 1s;
+}
+/*Al pasar el mouse sobre el elemento, cambia el tamaño n veces en ancho y m veces en alto*/
+.paraCambioTam:hover{
+    transform: scale(2.5,2.5); 
+}
+
+.paraExprimido{
+	padding: 1rem;
+	
+	/*Para transición*/
+    transition: transform 4s;
+}
+/*Al pasar el mouse sobre el elemento, tuerce la figura n grados en X y m grados en Y*/
+.paraExprimido:hover{
+    transform: skew(20deg, 30deg); 
+}

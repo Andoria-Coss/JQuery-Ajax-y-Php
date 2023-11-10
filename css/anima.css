@@ -1,0 +1,54 @@
+
+.imenu{
+    width: 6rem;
+    height: 5rem;
+}
+
+
+.paraTraslado{
+	padding: 2rem;
+	
+    animation-name: mueve;
+    animation-duration: 6s;
+    animation-iteration-count: 3;
+    animation-direction: alternate; /* reverse, alternate*/
+}
+
+.tipoboton{
+
+    background-image: url("../imgs/brocha.png");
+	color:rgb(236, 238, 241);
+	font-weight: bold;
+	padding: 0.5rem 1rem;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 0.5rem;
+    border-color: #ffffff;
+    border-radius: 100%;
+    width: 6.5rem;
+    height: 6.5rem;
+}
+.imgP{
+    width: 8rem;
+    height: 4.5rem;
+}
+img{
+    width: 8rem;
+    height: 7rem;
+}
+
+th{
+    text-align: center;
+}
+td{
+    background-color: aliceblue;
+    color: black;
+    font-size: large;
+}
+
+@keyframes mueve {
+    25% {transform: translate(3.2rem,0rem);}
+    50%  {transform: translate(3.2rem,3.2rem);}
+    75% {transform: translate(0rem,3.2rem);}
+    100% {transform: translate(0rem,0rem);}
+}

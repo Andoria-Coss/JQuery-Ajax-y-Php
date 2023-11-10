@@ -1,0 +1,212 @@
+
+.imenu{
+    width: 6rem;
+    height: 5rem;
+}
+
+a:link{color:rgb(7, 22, 71); display: block;}
+a:visited{color:rgb(96, 125, 179); font-weight: lighter;}
+a:hover{color:rgb(20, 85, 160); background-color: #ca6ee6da; font-weight: bold;}
+a.menu{
+	display: inline-block;
+	padding: 0.1em;
+	color: #c92a81;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	font-size: large;
+}
+
+body{
+	font-family: Verdana, Helvetica, Arial, "Times New Roman";
+	color: rgb(5, 82, 170);
+	background-color: #9fc1ff9c;
+}
+img, video, canvas {
+  max-width: 100%;
+}
+
+.animals{
+	width: 8rem;
+	height: 8rem;
+	padding: 1rem;
+}
+
+th{
+	text-align: center;
+	padding: 1rem;
+	background-color: #54e685;
+	font-size:large;
+	border-style: solid;
+	border-color: #f7e650;
+}
+tr{
+	background-color: #ff22a3;
+}
+td{
+	padding: 1rem;
+	font-size: medium;
+	font-weight: bold;
+	color: #f7e650;
+	border-style: solid;
+	border-color: #50b4f7;
+}
+
+.play{
+	width: max-content;
+}
+.logo{
+	max-width: 7rem;
+}
+header{
+	font-weight:bold;
+	text-align: left;
+}
+main {
+	border-radius: 0.2rem;
+	border: 0.2rem solid rgb(91, 148, 214);
+	text-transform: none;
+}
+section{
+	text-align: justify;
+}
+#titPral{
+	display: inline; 
+	vertical-align:90%;
+}
+
+/*Definir áreas para grid*/
+#main-header {
+	grid-area: header;
+	border-radius: 0.2rem;
+	border: 0.2rem solid rgb(91, 148, 214);
+	padding: 0.2em;
+	height: 5.5em;
+	/*color: rgb(0, 47, 100);*/
+	color: rgb(255, 0, 140);
+	font-size: large;
+	/*background-color: rgba(255, 255, 255, .5);/*Blanco con transparencia*/
+	text-transform: capitalize;
+	/*text-shadow: 0.3em 0.3em 0.6em rgb(196, 137, 49); /*sombra horizontal y sombra vertical*/
+	background-color: #fdee65;
+}
+#main-nav {
+	grid-area: nav;
+	display: block;
+	padding: 0.3em;
+	border-radius: 0.2rem;
+	border: 0.2rem solid rgb(96, 219, 147);
+	background-color: #5d86df;
+	cursor: pointer;
+}
+
+
+#main-content {
+	grid-area: content;
+	padding: 0.5em;
+}
+#main-aside {
+	grid-area: sidebar;
+	padding: 0.5em;
+	border-radius: 0.2rem;
+	border: 0.2rem solid rgb(248, 110, 230);
+	background-color: #54e685;/*Superior derecha*/
+	color: #ff22a3;
+}
+#main-advertisement {
+	grid-area: advertisement;
+	padding: 0.5em;
+	border-radius: 0.2rem;
+	border: 0.2rem solid rgb(255, 56, 99);
+	background-color: hsl(24, 100%, 67%);/*Inferior derecha*/
+	color: #ffee56;
+}
+#main-footer {
+	grid-area: footer;
+	font-size: 75%;
+	padding: 0.625em 0.9em 1.4em;
+	background-color: rgb(255, 0, 140);
+	text-align: center;
+	color: #f7e650;
+	border-radius: 0.2rem;
+	border: 0.2rem solid rgb(214, 91, 198);
+}
+
+/*Definir contenido del grid (y como no se indica otra cosa, será una columna)*/
+#main-layout {
+	display: grid;
+	grid-gap: 0.2em;
+	grid-template-areas:
+		"header"
+		"nav"
+		"content"
+		"sidebar"
+		"advertisement"
+		"footer";
+}
+
+/*Alterar distribución para dispositivos "medianos", dos columnas (3/4 y 1/4)*/
+@media (min-width: 500px) {
+	#main-layout {
+		grid-template-columns: 3fr 1fr;
+		grid-template-areas:
+			  "header header"
+			  "nav nav"
+			  "content sidebar"
+			  "footer advertisement";
+	}
+	nav a.menu {
+		display:inline-block;
+		justify-content: space-between;
+	}
+}
+
+/*Alterar distribución para dispositivos mayores (3 columnas: 1/6, 4/6, 1/6)*/
+@media (min-width: 700px) {
+	#main-layout {
+		grid-template-columns: 1fr 4fr 1fr;
+		grid-template-areas:
+			"header header  header"
+			"nav content sidebar"
+			"nav content advertisement"
+			"footer footer footer"
+	}
+	nav a.menu {
+		display:inline-block;
+		width:100%;
+	}
+	#main-content{
+		min-height: 18rem;
+	}
+	.por_columnas{
+		/*Definir número de columnas*/
+		column-count: 3;
+		
+		/*Definir separación entre columnas
+			valor en pixeles|normal|initial|inherit
+		*/
+		column-gap: 3.5em;
+		
+		/*
+			Para definir características de la línea de separación entre columnas:
+			-->Directo, column-rule: ancho, estilo y color
+			-->Por partes, column-rule-width, column-rule-style, column-rule-color
+		*/
+		
+		/*Definir ancho de línea de separación
+		medium|thin|thick|valor en pixeles |initial|inherit
+		*/
+		column-rule-width: thick;
+		
+		/*Definir estilo de línea de separación 
+			none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|initial|inherit
+		*/
+		column-rule-style: groove;
+		
+		/*Color de la línea*/
+		column-rule-color: DarkOliveGreen;
+	}
+	section h3{
+		column-span: all;
+		text-align: center;
+	}
+}
